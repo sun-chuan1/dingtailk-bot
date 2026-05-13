@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "api/index.py"
+    }
+  ],
+  "env": {
+    "DINGTALK_APP_SECRET": "@dingtalk_app_secret",
+    "AI_API_KEY": "@ai_api_key",
+    "AI_API_URL": "https://api.hunyuan.cloud.tencent.com/v1/chat/completions",
+    "AI_MODEL": "hunyuan-turbo",
+    "COMPANY_NAME": "公司名称"
+  }
+}
